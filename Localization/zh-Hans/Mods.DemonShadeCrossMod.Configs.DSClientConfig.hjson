@@ -1,0 +1,115 @@
+DisplayName: 客户端配置
+
+Headers: {
+	TooltipOrder: 套装文本
+	VFX: 视觉效果
+}
+
+RogueOrder: {
+	Label: 盗贼
+	Tooltip: 数值越小，越靠前
+}
+
+HealerOrder: {
+	Label: 牧师
+	Tooltip: 数值越小，越靠前
+}
+
+BardOrder: {
+	Label: 乐师
+	Tooltip: 数值越小，越靠前
+}
+
+ThrowerOrder: {
+	Label: 投手
+	Tooltip: 数值越小，越靠前
+}
+
+ClickerOrder: {
+	Label: 点击者
+	Tooltip: 数值越小，越靠前
+}
+
+VoidOrder: {
+	Label: 虚空
+	Tooltip: 数值越小，越靠前
+}
+
+DrawDataTest: {
+	Label: 绘制调试
+	Tooltip: 开发者使用调试功能
+}
+
+ShadowOutline: {
+	Label: 绘制残影轮廓光
+	Tooltip: 给残影也进行绘制轮廓光
+}
+
+DemonshadeOutline: {
+	Label: 魔影套轮廓光
+	Tooltip: 启用该选项后，以下配置参数才有作用
+}
+
+AllArmorOutline: {
+	Label: 实验性：全部盔甲轮廓光绘制
+	Tooltip:
+		'''
+		支持原版和其他模组盔甲的轮廓光绘制
+		但由于部分盔甲带有额外材质贴图，无法保证全部有轮廓包围
+		'''
+}
+
+OutlineColor: {
+	Label: 轮廓光颜色
+	Tooltip: ""
+}
+
+OutlineCoreWidth: {
+	Label: 轮廓光宽度
+	Tooltip: ""
+}
+
+OutlineHaloWidth: {
+	Label: 轮廓光光晕宽度
+	Tooltip: ""
+}
+
+OutlineHaloStrength: {
+	Label: 轮廓光光晕强度
+	Tooltip: ""
+}
+
+OutlineIntensity: {
+	Label: 轮廓光总体强度
+	Tooltip: ""
+}
+
+RogueDisplay: {
+	Label: 显示盗贼文本
+	Tooltip: ""
+}
+
+HealerDisplay: {
+	Label: 显示牧师文本
+	Tooltip: 仅移除文本，实际效果不移除
+}
+
+BardDisplay: {
+	Label: 显示吟游诗人文本
+	Tooltip: 仅移除文本，实际效果不移除
+}
+
+ThrowerDisplay: {
+	Label: 显示投手文本
+	Tooltip: 仅移除文本，实际效果不移除
+}
+
+ClickerDisplay: {
+	Label: 显示点击者文本
+	Tooltip: 仅移除文本，实际效果不移除
+}
+
+VoidDisplay: {
+	Label: 显示虚空文本
+	Tooltip: 仅移除文本，实际效果不移除
+}

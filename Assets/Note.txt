@@ -1,0 +1,3 @@
+特效灰度贴图可单独使用
+也可以搭配shader进行噪声、光线阈值、采样等操作进行叠加绘制
+https://mebiusbox.github.io/contents/EffectTextureMaker/

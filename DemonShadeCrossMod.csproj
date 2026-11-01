@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<!-- Import tModLoader mod properties -->
+	<Import Project="..\tModLoader.targets" />
+
+	<!-- General -->
+	<PropertyGroup>
+	  <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+	<ItemGroup>
+	  <Reference Include="CalamityBardHealer">
+	    <HintPath>lib\CalamityBardHealer_v0.13.4.dll</HintPath>
+	  </Reference>
+	  <Reference Include="CalamityMod">
+	    <HintPath>lib\CalamityMod_v2.2.4.dll</HintPath>
+	  </Reference>
+	  <Reference Include="ClickerClass">
+	    <HintPath>lib\ClickerClass_v1.4.1.2.dll</HintPath>
+	  </Reference>
+	  <Reference Include="SOTS">
+	    <HintPath>lib\SOTS_v0.25.1.7.dll</HintPath>
+	  </Reference>
+	  <Reference Include="ThoriumMod">
+	    <HintPath>lib\ThoriumMod_v1.7.2.6.dll</HintPath>
+	  </Reference>
+	</ItemGroup>
+
+	<!-- References -->
+	<ItemGroup>
+	  <!-- Keep temporary validation projects and their generated sources out of the mod compilation. -->
+	  <Compile Remove="Temp\**\*.cs" />
+	</ItemGroup>
+
+</Project>

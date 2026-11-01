@@ -1,0 +1,193 @@
+DisplayName: 服务器配置
+
+Headers: {
+	Calamity: "[i:DemonShadeCrossMod/CalamityIcon]灾厄"
+	Thorium: "[i:DemonShadeCrossMod/ThoriumIcon]瑟银"
+	ClickerClass: "[i:DemonShadeCrossMod/ClickerIcon]点击者"
+	SOTS: "[i:DemonShadeCrossMod/SOTSIcon]暗影奥秘"
+}
+
+TriggerTime: {
+	Label: 自动触发魔影激怒时间 （秒）
+	Tooltip: 长按本模组提供魔影激怒键，自动触发所需的时间
+}
+
+RemoveEnrageSound: {
+	Label: 移除魔影激怒的音效
+	Tooltip: 仅移除本模组提供的魔影激怒音效
+}
+
+ReAddRedDevil: {
+	Label: 重新添加红恶魔
+	Tooltip: ""
+}
+
+DemonFlamesBack: {
+	Label: 攻击施加恶魔之炎
+	Tooltip: ""
+}
+
+RemoveDsSetNerf: {
+	Label: 移除魔影激怒的削弱
+	Tooltip: 由1.5倍回调至未削弱的2.25倍
+}
+
+EnableStealthMeter: {
+	Label: 启用额外潜伏条
+	Tooltip: ""
+}
+
+StealthMeterMax: {
+	Label: 额外最大潜伏值
+	Tooltip: ""
+}
+
+ExtraRogueVelocity: {
+	Label: 盗贼弹幕速度
+	Tooltip: ""
+}
+
+ExtraStealthGenMoving: {
+	Label: 移动时潜伏值恢复速度
+	Tooltip: ""
+}
+
+ExtraStealthGenStandStill: {
+	Label: 静止时潜伏值恢复速度
+	Tooltip: ""
+}
+
+EnableHealerSet: {
+	Label: 启用牧师套装奖励
+	Tooltip: ""
+}
+
+HealBonus: {
+	Label: 额外治疗量
+	Tooltip: ""
+}
+
+EnableBardSet: {
+	Label: 启用吟游诗人套装奖励
+	Tooltip: ""
+}
+
+OverrideCalBardHealer: {
+	Label: "[C/FF9900:覆盖《非官方灾厄吟游诗人和牧师》]"
+	Tooltip: 取消《非官方灾厄吟游诗人和牧师》提供魔影套的牧师和吟游诗人强化
+}
+
+HealToolSpeed: {
+	Label: 治疗法术使用速度
+	Tooltip: ""
+}
+
+BardInspirationRegenBonus: {
+	Label: 灵感值再生速度
+	Tooltip: ""
+}
+
+BardResourceDropBonus: {
+	Label: 灵感音符掉落提升
+	Tooltip: ""
+}
+
+BardResourceBonus: {
+	Label: 额外最大灵感值
+	Tooltip: ""
+}
+
+BardBuffDurationBonus: {
+	Label: 咒音增幅持续时间乘算加成
+	Tooltip: 此为最高的独立乘算区间
+}
+
+ExtraBardBuffDuration: {
+	Label: 额外咒音增幅持续时间 （秒）
+	Tooltip: 此为加算区间
+}
+
+BardRangeBonus: {
+	Label: 咒音增幅覆盖范围
+	Tooltip: ""
+}
+
+ExtraLevelBonus: {
+	Label: 额外咒音增幅等级
+	Tooltip: 原版《瑟银》最高只有4级，要更高等级需要《诸神的黄昏》
+}
+
+EnableThrowerSet: {
+	Label: 启用投手套装奖励
+	Tooltip: ""
+}
+
+ThrowerTechPointsBonus: {
+	Label: 投手技巧点加成
+	Tooltip: 原瑟银只能多2点额外技巧点
+}
+
+ThrowerExhaustionMaxBonus: {
+	Label: 投手最大疲劳值加成
+	Tooltip: ""
+}
+
+ThrowerExhaustionRegenBonus: {
+	Label: 投手疲劳值再生加成
+	Tooltip: ""
+}
+
+ThrowerTechRechargeBonus: {
+	Label: 投手技巧点充能加成
+	Tooltip: ""
+}
+
+EnableClickerSet: {
+	Label: 启用点击者套装奖励
+	Tooltip: ""
+}
+
+ClickerRadiusBonus: {
+	Label: 点击范围加成
+	Tooltip: ""
+}
+
+ClickerEffectBonus: {
+	Label: 点击效果加成
+	Tooltip: 降低触发点击效果所需次数
+}
+
+ClickerEffect: {
+	Label: 额外点击效果
+	Tooltip: 穿戴魔影套提供魔影焰击点击效果
+}
+
+EnableVoidSet: {
+	Label: 启用虚空套装奖励
+	Tooltip: ""
+}
+
+VoidMax2Bonus: {
+	Label: 额外最大虚空值加成
+	Tooltip: ""
+}
+
+VoidRegenBonus: {
+	Label: 虚空值恢复速度加成
+	Tooltip: ""
+}
+
+VoidGainBonus: {
+	Label: 虚空值恢复量加成
+	Tooltip: ""
+}
+
+ClickerEffectDamage: {
+	Label: 点击效果伤害
+	Tooltip: 决定魔影焰击的伤害，魔影爆破默认为前者6倍伤害
+}
+
+ClickerImmunityFrameType: {
+	Label: 点击效果无敌帧类型
+	Tooltip: ""
+}

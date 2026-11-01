@@ -1,0 +1,8 @@
+displayName = Demonshade Set Crossmod Enhancement 跨模组魔影套强化
+author = 三杯伍迪
+version = 1.1
+includeSource = true
+modReferences = CalamityMod
+weakReferences = ThoriumMod , SOTS , ClickerClass , ContinentOfJourney , NoxusBoss ,CalamityBardHealer , InfernalEclipseAPI
+sortAfter = ThoriumMod , SOTS , ClickerClass , ContinentOfJourney , NoxusBoss , CalamityBardHealer , InfernalEclipseAPI
+buildIgnore = lib/* , Temp/*

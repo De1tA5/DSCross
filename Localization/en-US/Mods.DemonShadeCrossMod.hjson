@@ -1,0 +1,137 @@
+ModName: "Demonshade Set Crossmod Enhancement"
+Keybinds.DemonShadeEnrage.DisplayName: "Demonshade Enrage"
+
+ClickEffect: {
+	DemonShadeClickerEffect: {
+		Name: "Demonshade Strike"
+		Description: "Rain down terrifying demon flames to incinerate your enemies!"
+	}
+}
+
+Buffs: {
+	DemonFlames: {
+		DisplayName: "Demon Flames"
+		Description: "The terror of otherworldly flames has returned"
+		ItemTooltipPlayer: "Heat - 1250 DPS"
+		ItemTooltipEnemy:
+			'''
+			Heat - 1250 DPS
+			Increases damage dealt to enemies by an additional 15%
+			'''
+	}
+}
+
+ExtraSetBonus: {
+	RedDevilSetBonus: "Once again summons a Red Devil to fight for you"
+	DemonFlamesSetBonus: "Hits inflict the [cbuff:DemonShadeCrossMod/DemonFlames] debuff on enemies"
+	Rogue:
+		'''
+		[C/A74F01:Rogue]
+		Increases maximum stealth by {0}
+		Increases stealth generation rate while moving by {1}%
+		Increases stealth generation rate while standing still by {2}%
+		Increases rogue projectile velocity by {3}%
+		'''
+	Thrower:
+		'''
+		[C/FC9C41:Thrower]
+		Increases technique points by {0}
+		Increases maximum exhaustion by {1}
+		Increases exhaustion regeneration rate by {2}%
+		Increases technique point recharge rate by {3}%
+		'''
+	Bard:
+		'''
+		[C/95F456:Bard]
+		Increases maximum inspiration by {0}
+		Increases empowerment duration by {1} seconds
+		Increases empowerment duration by {2}%
+		Increases empowerment effect radius by {3}%
+		Increases inspiration regeneration rate by {4}%
+		Increases inspiration note drop chance by {5}%
+		Increases empowerment levels by an additional {6}
+		'''
+	Healer:
+		'''
+		[C/FFF850:Healer]
+		Healing spells restore an additional {0} life
+		Increases healing spell cast speed by {1}%
+		'''
+	Clicker:
+		'''
+		[C/D2F8FB:Clicker]
+		Increases base click radius by {0}%
+		Reduces the number of clicks required for click effects by {1}%
+		'''
+	Void:
+		'''
+		[C/6F00D8:Void]
+		Increases maximum void by {0}
+		Increases void regeneration rate by {1}%
+		Increases void gain by {2}
+		'''
+}
+
+Projectiles: {
+	Typeless.DemonshadeRedDevil.DisplayName: "Red Devil"
+	DemonshadeStrike.DisplayName: "Demonshade Strike"
+	DemonshadeExplosin.DisplayName: "Demonshade Explosion"
+	DemonshadeStrike2.DisplayName: "Demonshade Strike"
+}
+
+Items: {
+	CalamityIcon: {
+		DisplayName: "Calamity Icon"
+		Tooltip: "You are not supposed to see this"
+	}
+
+	ClickerIcon: {
+		DisplayName: "Clicker Class Icon"
+		Tooltip: "You are not supposed to see this"
+	}
+
+	SOTSIcon: {
+		DisplayName: "Secrets Of The Shadows Icon"
+		Tooltip: "You are not supposed to see this"
+	}
+
+	ThoriumIcon: {
+		DisplayName: "Thorium Icon"
+		Tooltip: "You are not supposed to see this"
+	}
+}
+
+Configs: {
+	ImmunityFrameType: {
+		Tooltip: "Determines the type of invincibility frames Demonshade Strike applies to enemies"
+
+		Global: {
+			Label: "Global Invincibility"
+			Tooltip:
+				'''
+				After a hit, the enemy temporarily cannot be damaged by other piercing attacks and melee hits from the same player that use global invincibility
+				(Nobody likes losing damage to shared i-frames)
+				'''
+		}
+
+		Static: {
+			Label: "Static Invincibility"
+			Tooltip:
+				'''
+				After a hit, the enemy temporarily cannot be damaged by projectiles of the same type that use static invincibility
+				Other projectile types can still hit
+				Recommended for smaller enemies and when using many different projectile types
+				'''
+		}
+
+		Local: {
+			Label: "Local Invincibility"
+			Tooltip:
+				'''
+				After a hit, only that specific projectile must wait before it can damage the enemy again
+				Other projectiles, even those of the same type, can still hit
+				The most versatile option; recommended for larger enemies and longer contact times
+				'''
+		}
+	}
+}

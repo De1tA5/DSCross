@@ -1,0 +1,32 @@
+[h2]Demonshade Set Crossmod Enhancement is simple crossmod adaptation and strong enhancement for Demonshade armor[/h2]
+
+[h3]=Mod Compatibility=[/h3]
+[list]
+ [*]Thorium
+ [*]Secrets of the Shadows
+ [*]Clicker Class
+ [*]Infernal Eclipse of Ragnarok(partial)
+[/list]
+
+[h3]=Basic Functions=[/h3]
+[list]
+ [*]Most stats can be adjusted through configuration options
+ [*]Re-added Red Devil and the Demon Flames debuff
+ [*]Allows to hold Enrage key provided by mod to auto-trigger, and restores Enrage to the original 2.25×
+[/list]
+
+[h3]=Update Plans=[/h3]
+[list]
+ [*]Support for Homeward Journey
+ [*]Provide additional enhancements for the Gem Tech armor
+ [*]Developer items
+[/list]
+[spoiler]May not be guaranteed[/spoiler]
+
+[h3]=Special Thanks=[/h3]
+[list]
+ [*][url=https://github.com/CalamityTeam/CalamityModPublic] Calamity [/url] Code assistance & sprites
+ [*][url=https://github.com/tModLoader/tModLoader] tModLoader [/url] Code assistance
+ [*][url=https://github.com/VortexOfRainbows/SOTS] Secrets of the Shadows [/url] Code assistance
+ [*][url=https://github.com/ClamityTeam/CalamityClickers]Calamity Clickers[/url]和[url=https://github.com/SamsonAllen13/ClickerClass]Clicker Class[/url] Code assistance
+[/list]

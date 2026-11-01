@@ -1,0 +1,193 @@
+DisplayName: "Server Configuration"
+
+Headers: {
+	Calamity: "[i:DemonShadeCrossMod/CalamityIcon]Calamity"
+	Thorium: "[i:DemonShadeCrossMod/ThoriumIcon]Thorium"
+	ClickerClass: "[i:DemonShadeCrossMod/ClickerIcon]Clicker Class"
+	SOTS: "[i:DemonShadeCrossMod/SOTSIcon]Secrets Of The Shadows"
+}
+
+TriggerTime: {
+	Label: "Demonshade Enrage Auto-Activation Delay (Sec)"
+	Tooltip: "How long to hold the Demonshade Enrage key provided by this mod before it activates automatically"
+}
+
+RemoveEnrageSound: {
+	Label: "Remove Demonshade Enrage Sound"
+	Tooltip: "Only removes the Demonshade Enrage sound added by this mod"
+}
+
+ReAddRedDevil: {
+	Label: "Restore Red Devil"
+	Tooltip: ""
+}
+
+DemonFlamesBack: {
+	Label: "Inflict Demon Flames on Hit"
+	Tooltip: ""
+}
+
+RemoveDsSetNerf: {
+	Label: "Revert Demonshade Enrage Nerf"
+	Tooltip: "Restores the multiplier from 1.5x to its original 2.25x"
+}
+
+EnableStealthMeter: {
+	Label: "Enable Additional Stealth Meter"
+	Tooltip: ""
+}
+
+StealthMeterMax: {
+	Label: "Additional Maximum Stealth"
+	Tooltip: ""
+}
+
+ExtraRogueVelocity: {
+	Label: "Rogue Projectile Velocity"
+	Tooltip: ""
+}
+
+ExtraStealthGenMoving: {
+	Label: "Stealth Generation Rate While Moving"
+	Tooltip: ""
+}
+
+ExtraStealthGenStandStill: {
+	Label: "Stealth Generation Rate While Standing Still"
+	Tooltip: ""
+}
+
+EnableHealerSet: {
+	Label: "Enable Healer Set Bonus"
+	Tooltip: ""
+}
+
+HealBonus: {
+	Label: "Additional Healing"
+	Tooltip: ""
+}
+
+EnableBardSet: {
+	Label: "Enable Bard Set Bonus"
+	Tooltip: ""
+}
+
+OverrideCalBardHealer: {
+	Label: "[C/FF9900:Override Unofficial Calamity Bard & Healer]"
+	Tooltip: "Disables the Healer and Bard bonuses to Demonshade armor provided by Unofficial Calamity Bard & Healer"
+}
+
+HealToolSpeed: {
+	Label: "Healing Spell Cast Speed"
+	Tooltip: ""
+}
+
+BardInspirationRegenBonus: {
+	Label: "Inspiration Regeneration Rate"
+	Tooltip: ""
+}
+
+BardResourceDropBonus: {
+	Label: "Inspiration Note Drop Chance Bonus"
+	Tooltip: ""
+}
+
+BardResourceBonus: {
+	Label: "Additional Maximum Inspiration"
+	Tooltip: ""
+}
+
+BardBuffDurationBonus: {
+	Label: "Empowerment Duration Multiplier Bonus"
+	Tooltip: "This is a separate multiplier applied at the final stage"
+}
+
+ExtraBardBuffDuration: {
+	Label: "Additional Empowerment Duration (Seconds)"
+	Tooltip: "This bonus is additive"
+}
+
+BardRangeBonus: {
+	Label: "Empowerment Effect Radius"
+	Tooltip: ""
+}
+
+ExtraLevelBonus: {
+	Label: "Additional Empowerment Levels"
+	Tooltip: "Thorium only supports up to level 4; higher levels require Ragnarok mod"
+}
+
+EnableThrowerSet: {
+	Label: "Enable Thrower Set Bonus"
+	Tooltip: ""
+}
+
+ThrowerTechPointsBonus: {
+	Label: "Technique Point Bonus"
+	Tooltip: "Thorium only supports 2 additional technique points"
+}
+
+ThrowerExhaustionMaxBonus: {
+	Label: "Maximum Exhaustion Bonus"
+	Tooltip: ""
+}
+
+ThrowerExhaustionRegenBonus: {
+	Label: "Exhaustion Regeneration Bonus"
+	Tooltip: ""
+}
+
+ThrowerTechRechargeBonus: {
+	Label: "Technique Point Recharge Bonus"
+	Tooltip: ""
+}
+
+EnableClickerSet: {
+	Label: "Enable Clicker Set Bonus"
+	Tooltip: ""
+}
+
+ClickerRadiusBonus: {
+	Label: "Click Radius Bonus"
+	Tooltip: ""
+}
+
+ClickerEffectBonus: {
+	Label: "Click Effect Bonus"
+	Tooltip: "Reduces the number of clicks required to trigger click effects"
+}
+
+ClickerEffect: {
+	Label: "Additional Click Effect"
+	Tooltip: "Wearing Demonshade armor grants the Demonshade Strike click effect"
+}
+
+EnableVoidSet: {
+	Label: "Enable Void Set Bonus"
+	Tooltip: ""
+}
+
+VoidMax2Bonus: {
+	Label: "Additional Maximum Void"
+	Tooltip: ""
+}
+
+VoidRegenBonus: {
+	Label: "Void Regeneration Rate Bonus"
+	Tooltip: ""
+}
+
+VoidGainBonus: {
+	Label: "Void Gain Bonus"
+	Tooltip: ""
+}
+
+ClickerEffectDamage: {
+	Label: "Click Effect Damage"
+	Tooltip: "Determines the damage of Demonshade Strike; Demonshade Explosion deals 6 times that damage by default"
+}
+
+ClickerImmunityFrameType: {
+	Label: "Click Effect Invincibility Type"
+	Tooltip: ""
+}

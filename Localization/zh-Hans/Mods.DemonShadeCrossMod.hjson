@@ -1,0 +1,135 @@
+ModName: 跨模组魔影套强化
+Keybinds.DemonShadeEnrage.DisplayName: 魔影激怒
+
+ClickEffect: {
+	DemonShadeClickerEffect: {
+		Name: 魔影焰击
+		Description: 降下恐怖魔焰焚毁你的敌人！
+	}
+}
+
+Buffs: {
+	DemonFlames: {
+		DisplayName: 恶魔之炎
+		Description: 来自异界的恐怖焚烧已然归来
+		ItemTooltipPlayer: 火系 - 1250 DPS
+		ItemTooltipEnemy:
+			'''
+			火系 - 1250 DPS
+			额外增加15%对敌怪造成的伤害
+			'''
+	}
+}
+
+ExtraSetBonus: {
+	RedDevilSetBonus: 重新召唤一只红恶魔为你而战
+	DemonFlamesSetBonus: 击中敌怪施加其[cbuff:DemonShadeCrossMod/DemonFlames]减益
+	Rogue:
+		'''
+		[C/A74F01:盗贼]
+		增加{0}点最大潜伏值
+		提升{1}%移动时潜伏值恢复速度
+		提升{2}%静止时潜伏值恢复速度
+		提升{3}%盗贼投掷弹幕速度
+		'''
+	Thrower:
+		'''
+		[C/FC9C41:投手]
+		增加{0}点技巧值
+		增加{1}点最大疲劳值
+		提升{2}%疲劳值恢复速度
+		提升{3}%技巧值充能速度
+		'''
+	Bard:
+		'''
+		[C/95F456:吟游诗人]
+		增加{0}点额外最大灵感值
+		提升{1}秒咒音增幅持续时间
+		增加{2}%咒音增幅持续时间
+		增加{3}%咒音增幅覆盖范围
+		提升{4}%灵感值再生速度
+		增加{5}%灵感音符掉落掉落概率
+		咒音增幅额外提升{6}级
+		'''
+	Healer:
+		'''
+		[C/FFF850:牧师]
+		治疗法术会额外治疗{0}点生命值
+		提升{1}%治疗法术施法速度
+		'''
+	Clicker:
+		'''
+		[C/D2F8FB:点击者]
+		增加{0}%基础点击范围
+		减少{1}%点击效果所需次数
+		'''
+	Void:
+		'''
+		[C/6F00D8:虚空]
+		增加{0}点最大虚空值
+		提升{1}%虚空值恢复速度
+		增加{2}虚空恢复量
+		'''
+}
+
+Projectiles: {
+	Typeless.DemonshadeRedDevil.DisplayName: 红恶魔
+	DemonshadeStrike.DisplayName: 魔影焰击
+	DemonshadeExplosin.DisplayName: 魔影爆破
+	DemonshadeStrike2.DisplayName: 魔影焰击
+}
+
+Items: {
+	CalamityIcon: {
+		DisplayName: 灾厄图标
+		Tooltip: 你不该看到的
+	}
+
+	ClickerIcon: {
+		DisplayName: 点击者图标
+		Tooltip: 你不该看到的
+	}
+
+	SOTSIcon: {
+		DisplayName: 暗影奥秘图标
+		Tooltip: 你不该看到的
+	}
+
+	ThoriumIcon: {
+		DisplayName: 瑟银图标
+		Tooltip: 你不该看到的
+	}
+}
+
+Configs: {
+	ImmunityFrameType: {
+		Tooltip: 决定魔影焰击的无敌帧类型
+
+		Global: {
+			Label: 全局无敌帧
+			Tooltip:
+				'''
+				会受到或导致所有攻击骗伤
+				（没人喜欢骗伤）
+				'''
+		}
+
+		Static: {
+			Label: 静态无敌帧
+			Tooltip:
+				'''
+				导致同类型弹幕之间攻击的骗伤
+				敌怪越小，弹幕种类越多越推荐该类型
+				'''
+		}
+
+		Local: {
+			Label: 独立无敌帧
+			Tooltip:
+				'''
+				导致同一个弹幕攻击的骗伤
+				最通用且敌怪越大，接触时间越长，越推荐该类型
+				'''
+		}
+	}
+}

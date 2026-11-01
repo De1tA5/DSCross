@@ -1,0 +1,115 @@
+DisplayName: "Client Configuration"
+
+Headers: {
+	TooltipOrder: "Set Bonus Tooltips"
+	VFX: "Visual Effects"
+}
+
+RogueOrder: {
+	Label: "Rogue"
+	Tooltip: "Lower values appear first"
+}
+
+HealerOrder: {
+	Label: "Healer"
+	Tooltip: "Lower values appear first"
+}
+
+BardOrder: {
+	Label: "Bard"
+	Tooltip: "Lower values appear first"
+}
+
+ThrowerOrder: {
+	Label: "Thrower"
+	Tooltip: "Lower values appear first"
+}
+
+ClickerOrder: {
+	Label: "Clicker"
+	Tooltip: "Lower values appear first"
+}
+
+VoidOrder: {
+	Label: "Void"
+	Tooltip: "Lower values appear first"
+}
+
+DrawDataTest: {
+	Label: "Drawing Debug Tools"
+	Tooltip: "Debug tools for developers"
+}
+
+ShadowOutline: {
+	Label: "Shadow Outlines"
+	Tooltip: "Also draws glowing outlines around shadows"
+}
+
+DemonshadeOutline: {
+	Label: "Demonshade Armor Outline"
+	Tooltip: "Enable this option for the settings below to take effect"
+}
+
+AllArmorOutline: {
+	Label: "Experimental: Outlines for All Armor"
+	Tooltip:
+		'''
+		Supports glowing outlines for vanilla and modded armor
+		Some armor uses additional textures, so the outline may not cover every part
+		'''
+}
+
+OutlineColor: {
+	Label: "Outline Color"
+	Tooltip: ""
+}
+
+OutlineCoreWidth: {
+	Label: "Outline Width"
+	Tooltip: ""
+}
+
+OutlineHaloWidth: {
+	Label: "Outline Halo Width"
+	Tooltip: ""
+}
+
+OutlineHaloStrength: {
+	Label: "Outline Halo Strength"
+	Tooltip: ""
+}
+
+OutlineIntensity: {
+	Label: "Overall Outline Intensity"
+	Tooltip: ""
+}
+
+RogueDisplay: {
+	Label: "Show Rogue Tooltip"
+	Tooltip: ""
+}
+
+HealerDisplay: {
+	Label: "Show Healer Tooltip"
+	Tooltip: "Only hides the tooltip; the effects still apply"
+}
+
+BardDisplay: {
+	Label: "Show Bard Tooltip"
+	Tooltip: "Only hides the tooltip; the effects still apply"
+}
+
+ThrowerDisplay: {
+	Label: "Show Thrower Tooltip"
+	Tooltip: "Only hides the tooltip; the effects still apply"
+}
+
+ClickerDisplay: {
+	Label: "Show Clicker Tooltip"
+	Tooltip: "Only hides the tooltip; the effects still apply"
+}
+
+VoidDisplay: {
+	Label: "Show Void Tooltip"
+	Tooltip: "Only hides the tooltip; the effects still apply"
+}

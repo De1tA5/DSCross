@@ -1,0 +1,32 @@
+[h2]跨模组魔影套强化是一个针对魔影套的简单的多模组适配强强化[/h2]
+
+[h3]=适配模组=[/h3]
+[list]
+ [*]瑟银
+ [*]暗影奥秘
+ [*]点击者
+ [*]炼狱蚀光（小部分）
+[/list]
+
+[h3]=基本功能=[/h3]
+[list]
+ [*]绝大多数属性均可通过配置选项调整
+ [*]重新添加红恶魔以及恶魔之焰减益
+ [*]允许长按自动触发的魔影激怒，以及对魔影激怒的数值回调
+[/list]
+
+[h3]=更新计划=[/h3]
+[list]
+ [*]对旅人归途的支持
+ [*]提供天钻套的额外强化
+ [*]开发者物品
+[/list]
+[spoiler]可能无法保证[/spoiler]
+
+[h3]=特别感谢=[/h3]
+[list]
+ [*][url=https://github.com/CalamityTeam/CalamityModPublic] 灾厄 [/url] 代码帮助&贴图
+ [*][url=https://github.com/tModLoader/tModLoader] tModLoader [/url] 代码帮助
+ [*][url=https://github.com/VortexOfRainbows/SOTS] 暗影奥秘 [/url] 代码帮助
+ [*][url=https://github.com/ClamityTeam/CalamityClickers]灾厄点击者[/url]和[url=https://github.com/SamsonAllen13/ClickerClass]点击者[/url] 代码帮助
+[/list]
