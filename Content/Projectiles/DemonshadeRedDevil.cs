@@ -17,6 +17,10 @@ namespace DemonShadeCrossMod.Content.Projectiles
         public new string LocalizationCategory => "Projectiles.Typeless";
         public int dust = 3;
 
+        public ref float behaviorStage => ref Projectile.ai[0]; //状态机，0游荡，1攻击预备， 2返回
+
+        public ref float attackCooldown => ref Projectile.ai[1]; //攻击计时器，攻击预备状态后，计时器到0攻击
+
         public override void SetStaticDefaults()
         {
             Main.projFrames[Projectile.type] = 5;
@@ -42,24 +46,31 @@ namespace DemonShadeCrossMod.Content.Projectiles
             bool isMinion = Projectile.type == ModContent.ProjectileType<DemonshadeRedDevil>();
             Player player = Main.player[Projectile.owner];
             DSPlayer dsPlayer = player.DSPlayer();
-            //判断玩家套装奖励和是否存活
-            if (!dsPlayer.RedDevil || !player.Calamity().demonshadeSet)
+            
+            if (Projectile.owner != Main.myPlayer) 
             {
-                Projectile.active = false;
+                Projectile.Kill();
+                return;
+            }
+
+            //判断玩家套装奖励和是否存活
+            if (player.dead || !player.active || !dsPlayer.demonShadeRedDevil || !player.Calamity().demonshadeSet)
+            {
+                Projectile.Kill();
                 return;
             }
             if (isMinion)
             {
                 if (player.dead)
                 {
-                    dsPlayer.RedDevil = false;
+                    dsPlayer.demonShadeRedDevil = false;
                 }
-                if (dsPlayer.RedDevil)
+                if (dsPlayer.demonShadeRedDevil)
                 {
                     Projectile.timeLeft = 2;
                 }
             }
-            //粒子效果
+            //生成时的粒子效果
             dust--;
             if (dust >= 0)
             {
@@ -92,16 +103,18 @@ namespace DemonShadeCrossMod.Content.Projectiles
             {
                 Projectile.spriteDirection = -Projectile.direction;
             }
+
             float attackRange = 2000f;
             bool decelerate = false;
-            if (Projectile.ai[0] == 2f)
+            if (behaviorStage == 2f)
             {
-                Projectile.ai[1] += 1f;
+                attackCooldown += 1f;
                 Projectile.extraUpdates = 1;
-                if (Projectile.ai[1] > 40f)
+                //同步
+                if (attackCooldown > 40f)
                 {
-                    Projectile.ai[1] = 1f;
-                    Projectile.ai[0] = 0f;
+                    attackCooldown = 1f;
+                    behaviorStage = 0f;
                     Projectile.extraUpdates = 0;
                     Projectile.numUpdates = 0;
                     Projectile.netUpdate = true;
@@ -119,7 +132,7 @@ namespace DemonShadeCrossMod.Content.Projectiles
 
             Vector2 projPos = Projectile.position;
             bool canAttack = false;
-            if (Projectile.ai[0] != 1f)
+            if (behaviorStage != 1f)
             {
                 Projectile.tileCollide = false;
             }
@@ -172,12 +185,12 @@ namespace DemonShadeCrossMod.Content.Projectiles
             //超过距离使召唤物返回
             if (Vector2.Distance(player.Center, Projectile.Center) > separationAnxietyDist)
             {
-                Projectile.ai[0] = 1f;
+                behaviorStage = 1f;
                 Projectile.tileCollide = false;
                 Projectile.netUpdate = true;
             }
 
-            if (canAttack && Projectile.ai[0] == 0f)
+            if (canAttack && behaviorStage == 0f)
             {
                 Vector2 projDirection = projPos - Projectile.Center;
                 float projDist = projDirection.Length();
@@ -200,15 +213,16 @@ namespace DemonShadeCrossMod.Content.Projectiles
                 bool isReturning = false;
                 if (!isReturning)
                 {
-                    isReturning = Projectile.ai[0] == 1f;
+                    isReturning = behaviorStage == 1f;
                 }
-                //返回时代码，
+                
                 float returnSpeed = 5f; //6
 
                 if (isReturning)
                 {
                     returnSpeed = 12f; //15
                 }
+
                 Vector2 center2 = Projectile.Center;
                 Vector2 playerDirection = player.Center - center2 + new Vector2(0f, -30f); //-60
                 float playerDist = playerDirection.Length();
@@ -220,7 +234,7 @@ namespace DemonShadeCrossMod.Content.Projectiles
 
                 if (playerDist < 150f && isReturning && !Collision.SolidCollision(Projectile.position, Projectile.width, Projectile.height))
                 {
-                    Projectile.ai[0] = 0f;
+                    behaviorStage = 0f;
                     Projectile.netUpdate = true;
                 }
                 //距离过远直接传送到玩家身边
@@ -244,23 +258,25 @@ namespace DemonShadeCrossMod.Content.Projectiles
                 }
             }
 
-            if (Projectile.ai[1] > 0f)
+            //攻击后每帧增加1到4冷却
+            if (attackCooldown > 0f)
             {
-                Projectile.ai[1] += (float)Main.rand.Next(1, 4);
+                attackCooldown += (float)Main.rand.Next(1, 4);
             }
-            if (Projectile.ai[1] > 80f)
+            if (attackCooldown > 80f)
             {
-                Projectile.ai[1] = 0f;
+                attackCooldown = 0f;
                 Projectile.netUpdate = true;
             }
+
             //攻击射出弹幕
-            if (Projectile.ai[0] == 0f)
+            if (behaviorStage == 0f)
             {
                 float speed = 24f;
                 int projType = ProjectileID.UnholyTridentFriendly;
-                if (canAttack && Projectile.ai[1] == 0f)
+                if (canAttack && attackCooldown == 0f)
                 {
-                    Projectile.ai[1] += 1f;
+                    attackCooldown += 1f;
                     if (Main.myPlayer == Projectile.owner && Collision.CanHitLine(Projectile.Center, Projectile.width, Projectile.height, projPos, 0, 0))
                     {
                         Vector2 velocity = projPos - Projectile.Center;
@@ -285,16 +301,15 @@ namespace DemonShadeCrossMod.Content.Projectiles
         {
             SpriteEffects spriteEffects = Projectile.spriteDirection == -1 ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
             Texture2D texture2D13 = Terraria.GameContent.TextureAssets.Projectile[Projectile.type].Value;
-            int framing = Terraria.GameContent.TextureAssets.Projectile[Projectile.type].Value.Height / Main.projFrames[Projectile.type];
-            int y6 = framing * Projectile.frame;
+            int frameHeight = texture2D13.Height / Main.projFrames[Projectile.type];
+            int y6 = frameHeight * Projectile.frame;
             Main.spriteBatch.Draw(
                 texture2D13,
                 Projectile.Center - Main.screenPosition + new Vector2(0f, Projectile.gfxOffY),
-                new Microsoft.Xna.Framework.Rectangle?(new Rectangle(0, y6, texture2D13.Width, framing)),
+                new Rectangle(0, y6, texture2D13.Width, frameHeight),
                 Projectile.GetAlpha(lightColor),
                 Projectile.rotation,
-                new Vector2((float)texture2D13.Width / 2f,
-                (float)framing / 2f),
+                new Vector2(texture2D13.Width * 0.5f, frameHeight * 0.5f),
                 Projectile.scale,
                 spriteEffects, 0);
             return false;
