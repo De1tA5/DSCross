@@ -13,18 +13,25 @@ namespace DemonShadeCrossMod.Content.Buffs
     //26.10.22 使用着色器粒子
     public class DemonFlames : ModBuff
     {
-        public static DebuffData debuffData = new DebuffData()
-        {
-            HeatDebuffScaling = 1f
-        };
-
         public override void SetStaticDefaults()
         {
             Main.debuff[Type] = true;
             Main.pvpBuff[Type] = true;
             Main.buffNoSave[Type] = true;
             BuffID.Sets.LongerExpertDebuff[Type] = true;
-            CalamityBuffSets.DebuffDataset[Type] = debuffData;
+
+            CalamityBuffSets.DebuffDataset[Type] = new DebuffData()
+            {
+                //权重同时吃到NPC元素易伤和元素抗性的影响
+                //为了均衡伤害，即便NPC为全抗性也不会受到影响，均分配0.1f
+                //只要不出现抗性元素多于易伤，都有额外增伤害
+                HeatDebuffScaling = 0.1f,
+                SicknessDebuffScaling = 0.1f,
+                ElectricDebuffScaling = 0.1f,
+                ColdDebuffScaling = 0.1f,
+                WaterDebuffScaling = 0.1f
+            };
+            
         }
 
         public override void Update(NPC npc, ref int buffIndex)
