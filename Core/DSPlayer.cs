@@ -16,52 +16,34 @@ namespace DemonShadeCrossMod.Core
 {
     public class DSPlayer : ModPlayer
     {
-        public bool RedDevil;
+        public bool demonShadeRedDevil;
         public bool demonFlames;
         public int triggerTimer;
         public bool demonFlamesAttack;
 
         public override void ResetEffects()
         {
-            RedDevil = DSConfig.Instance.ReAddRedDevil;
+            demonShadeRedDevil = DSConfig.Instance.ReAddRedDevil;
             demonFlames = false;
             demonFlamesAttack = DSConfig.Instance.DemonFlamesBack;
         }
 
+        //击中前结算
         public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
-            if (Player.Calamity().demonshadeSet && demonFlamesAttack)
-            {
-                target.AddBuff(ModContent.BuffType<DemonFlames>(), 3 * 60);
-            }
             if (target.GetGlobalNPC<DSNPC>().demonFlames)
             {
                 modifiers.FinalDamage += 0.1f;
             }
         }
-        public override void ModifyHitNPCWithProj(Projectile proj, NPC target, ref NPC.HitModifiers modifiers)
+        
+        //击中后结算
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             if (Player.Calamity().demonshadeSet && demonFlamesAttack)
-            {
-                target.AddBuff(ModContent.BuffType<DemonFlames>(), 3 * 60);
+                target.AddBuff(ModContent.BuffType<DemonFlames>(), 3*60);
+        }
 
-            }
-            if (target.GetGlobalNPC<DSNPC>().demonFlames)
-            {
-                modifiers.FinalDamage += 0.1f;
-            }
-        }
-        public override void ModifyHitNPCWithItem(Item item, NPC target, ref NPC.HitModifiers modifiers)
-        {
-            if (Player.Calamity().demonshadeSet && demonFlamesAttack)
-            {
-                target.AddBuff(ModContent.BuffType<DemonFlames>(), 3 * 60);
-            }
-            if (target.GetGlobalNPC<DSNPC>().demonFlames)
-            {
-                modifiers.FinalDamage += 0.1f;
-            }
-        }
         public override void PostUpdateEquips()
         {
 
@@ -71,9 +53,12 @@ namespace DemonShadeCrossMod.Core
                 DemonshadeHelm.MultDamageBoost = DSConfig.Instance.RemoveDsSetNerf ? 1.25f : 0.5F;
 
                 //生成红恶魔
-                if (RedDevil)
+                if (demonShadeRedDevil)
                 {
-                    if (Player.ownedProjectileCounts[ModContent.ProjectileType<DemonshadeRedDevil>()] < 1)
+                    if (Player.whoAmI == Main.myPlayer 
+                        && !Player.dead
+                        && Player.active
+                        && Player.ownedProjectileCounts[ModContent.ProjectileType<DemonshadeRedDevil>()] < 1)
                     {
                         Projectile.NewProjectile(
                             Player.GetSource_FromThis(),
@@ -130,6 +115,7 @@ namespace DemonShadeCrossMod.Core
                 triggerTimer = 0;
             }
         }
+
         public static void DemonShadeEnrage(Player player)
         {
             if (player.Calamity().demonshadeSet)

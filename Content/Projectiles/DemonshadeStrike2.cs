@@ -30,7 +30,7 @@ namespace DemonShadeCrossMod.Content.Projectiles
         public float endRotationMultiplier = 4f; //结束时的角速度倍数
 
         //实际弹幕围绕中心，初始化为光标位置
-        public Vector2 followCenter = Main.MouseWorld;
+        public Vector2 followCenter;
 
         //延迟一段时上光标因素 ，1为立即追
         public float delayHoming = 0.084f;
@@ -41,7 +41,7 @@ namespace DemonShadeCrossMod.Content.Projectiles
         //计时器，可能会用于联机同步
         public float Timer
         {
-            get => Projectile.ai[0];
+            get => Projectile.ai[0]; 
             set => Projectile.ai[0] = value;
         }
 
@@ -51,6 +51,7 @@ namespace DemonShadeCrossMod.Content.Projectiles
             get => Projectile.ai[1];
             set => Projectile.ai[1] = value;
         }
+
 
         public static Asset<Texture2D> GlowFlare2 { get; private set; }
 
@@ -111,6 +112,7 @@ namespace DemonShadeCrossMod.Content.Projectiles
             SoundEngine.PlaySound(style with { Volume = 100f }, Player.Center); //建议直接在玩家处播放
             //初始化时间
             Timer = maxTime;
+            followCenter = Main.MouseWorld;
         }
 
         public override void AI()
@@ -135,6 +137,7 @@ namespace DemonShadeCrossMod.Content.Projectiles
             else
             {
                 Projectile.Kill();
+                return;
             }
 
             //设置基础速度
@@ -168,6 +171,9 @@ namespace DemonShadeCrossMod.Content.Projectiles
         //弹幕结束引发爆炸
         public override void OnKill(int timeLeft)
         {
+            if (Projectile.owner != Main.myPlayer)
+                return;
+
             Projectile.NewProjectile(
                 Projectile.GetSource_FromThis(),
                 Projectile.Center, //最后弹幕结束位置

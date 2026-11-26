@@ -93,6 +93,7 @@ namespace DemonShadeCrossMod.Content.Projectiles
             {
                 Projectile.frame = 0;
             }
+
             //光照
             float lights = (float)Main.rand.Next(90, 111) * 0.01f;
             lights *= Main.essScale;
